@@ -1,9 +1,10 @@
-from django.shortcuts import render
-from django.core.serializers import serialize
+import json
+
 from django.http import JsonResponse
+from django.shortcuts import render
+
 from .forms import WishForm
 from .models import Wish
-import json
 
 
 def index(request):
@@ -20,7 +21,7 @@ def index(request):
             return JsonResponse(wish_data)
 
     form = WishForm()
-    wishes = Wish.objects.all().order_by('-created_at')  # Fetch existing wishes
+    wishes = Wish.objects.all().order_by('created_at')  # Fetch existing wishes
     wishes_data = [
         {
             'id': wish.id,
@@ -32,15 +33,3 @@ def index(request):
     context = {'items': json.dumps(wishes_data), 'form': form}
 
     return render(request, 'singlepage/index1.html', context)
-
-
-# def item_list(request):
-#     if request.method == "POST":
-#         form = ItemForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('item_list')
-#     else:
-#         form = ItemForm()
-#     items = Item.objects.all()
-#     return render(request, 'singlepage/item_list.html', {'items': items, 'form': form})

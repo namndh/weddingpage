@@ -673,68 +673,64 @@
 </script>
 
 <script>
-    const wishesContainer = $('#wishes-container');
-    const owlCarousel = wishesContainer.owlCarousel({
-        loop: true,
-        autoplay: true,
-        autoHeight: true,
-        nav: true,
-        dots: false,
-        smartSpeed: 1000,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1,
-                nav: true
-            },
-            600: {
-                items: 1,
-                nav: false
-            },
-            1000: {
-                items: 1,
-                nav: true,
-                loop: false
-            }
-        }
-    });
-    $(document).ready(function () {
-        var existingWishes = JSON.parse("{{ items|escapejs }}");  // Access wishes from context
-        displayWishes(existingWishes);
-    });
-
     // Function to display wishes (modified)
     function displayWishes(data) {
-        data.forEach(function (wish) {
-            const wishItem = $(`<div class="item"><h2>${wish.wish}</h2><span>${wish.author}</span></div>`);
-            owlCarousel.trigger('add.owl.carousel', [wishItem, 0]).trigger('refresh.owl.carousel');
+        const owlCarousel = $('#wishes-container').owlCarousel({
+            loop: true,
+            autoplay: true,
+            autoHeight: true,
+            margin: 10,
+            smartSpeed: 500,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true
+                },
+                600: {
+                    items: 1,
+                    nav: false
+                },
+                1000: {
+                    items: 1,
+                    nav: true,
+                    loop: false
+                }
+            }
+        })
+        data.forEach(function(wish) {
+            const wishItem = $('<div class="item"></div>');  // Create an item element
+            wishItem.append(`<div class="wpo-blog-content"><h2>${wish.wish}</h2><span>${wish.author}</span></div>`);
+            owlCarousel.trigger('add.owl.carousel', wishItem);  // Append the item to the container
         });
-        owlCarousel.trigger('to.owl.carousel', 0).trigger('refresh.owl.carousel');
-    }
-
-    $(document).ready(function () {
+    };
+    $(document).ready(function() {
+        var existingWishes = JSON.parse("{{ items|escapejs }}");  // Access wishes from context
+        displayWishes(existingWishes);  // Display existing wishes on page load
+    });
+    $(document).ready(function() {
         // Initial display of existing wishes using AJAX
         $.ajax({
             url: '{% url 'index' %}',  // URL for fetching existing wishes
             dataType: 'json',
-            success: function (response) {
+            success: function(response) {
                 displayWishes(response);  // Display retrieved wishes
             }
         });
 
         // Handle form submission using AJAX (existing code)
-        $('#add-wish-form').submit(function (event) {
-            event.preventDefault();
+        $('#add-wish-form').submit(function(event) {
+           event.preventDefault();
 
-            $.ajax({
-                url: $(this).attr('action'),
-                method: 'POST',
-                data: $(this).serialize(),
-                success: function (response) {
-                    displayWishes([response]);  // Update displayed wishes
-                    $('#add-wish-form')[0].reset();  // Clear the form
-                }
-            });
+                $.ajax({
+                    url: $(this).attr('action'),
+                    method: 'POST',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        displayWishes([response]);  // Update displayed wishes
+                        $('#add-wish-form')[0].reset();  // Clear the form
+                    }
+                });
         });
     });
 </script>
