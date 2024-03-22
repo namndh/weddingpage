@@ -32,4 +32,4 @@ def index(request):
     ]
     context = {'items': json.dumps(wishes_data), 'form': form}
 
-    return render(request, 'singlepage/index1.html', context)
+    return render(request, 'singlepage/index.html', context)
