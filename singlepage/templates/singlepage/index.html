@@ -673,32 +673,34 @@
 </script>
 
 <script>
-    // Function to display wishes (modified)
-    function displayWishes(data) {
-        const owlCarousel = $('#wishes-container').owlCarousel({
-            loop: true,
-            autoplay: true,
-            autoHeight: true,
-            margin: 10,
-            dots: false,
-            smartSpeed: 1000,
-            responsiveClass: true,
-            responsive: {
-                0: {
-                    items: 1,
-                    nav: true
-                },
-                600: {
-                    items: 1,
-                    nav: false
-                },
-                1000: {
-                    items: 1,
-                    nav: true,
-                    loop: false
-                }
+    const wishContainer = $('#wishes-container');
+    const owlCarousel = wishContainer.owlCarousel({
+        loop: true,
+        autoplay: true,
+        autoHeight: true,
+        margin: 10,
+        dots: false,
+        smartSpeed: 1000,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: true
+            },
+            600: {
+                items: 1,
+                nav: false
+            },
+            1000: {
+                items: 1,
+                nav: true,
+                loop: false
             }
-        })
+        }
+    })
+    // Function to display wishes (modified)
+
+    function displayWishes(data) {
         data.forEach(function(wish) {
             const wishItem = $('<div class="item"></div>');  // Create an item element
             wishItem.append(`<div class="wpo-blog-content"><h2>${wish.wish}</h2><span>${wish.author}</span></div>`);
@@ -707,7 +709,7 @@
         owlCarousel.trigger('to.owl.carousel', 0).trigger('refresh.owl.carousel');
     }
     $(document).ready(function() {
-        var existingWishes = JSON.parse("{{ items|escapejs }}");  // Access wishes from context
+        const existingWishes = JSON.parse("{{ items|escapejs }}");  // Access wishes from context
         displayWishes(existingWishes);  // Display existing wishes on page load
     });
     $(document).ready(function() {
