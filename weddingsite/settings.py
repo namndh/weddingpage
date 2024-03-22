@@ -27,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://pure-wave-49292-087980e733a6.herokuapp.com"]
 
-CSRF_TRUSTED_ORIGINS = [" https://pure-wave-49292-087980e733a6.herokuapp.com"]
+CSRF_TRUSTED_ORIGINS = ["https://pure-wave-49292-087980e733a6.herokuapp.com"]
 
 # Application definition
 
