@@ -25,10 +25,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY = 'django-insecure--d$k%w3t4hba@hw)1-v6fw*c(8@ymo^v@e_or*)n+kwkox!^#&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
+CSRF_TRUSTED_ORIGINS = [" https://pure-wave-49292-087980e733a6.herokuapp.com"]
 
 # Application definition
 
