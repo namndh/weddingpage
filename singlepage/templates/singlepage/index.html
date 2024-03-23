@@ -9,7 +9,6 @@
     <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}">
     <title>Nam & Tu 's Wedding</title>
     <link href="{% static 'css/themify-icons.css' %}" rel="stylesheet">
-    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/flaticon.css' %}" rel="stylesheet">
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/animate.css' %}" rel="stylesheet">
@@ -24,7 +23,6 @@
     <link href="{% static 'css/odometer-theme-default.css' %}" rel="stylesheet">
     <link href="{% static 'css/jquery-ui.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
     <style>
         .open-button {
             background-color: #007bff;
@@ -116,21 +114,18 @@
                                     <p>Chiềng làng chiềng chạ</p>
                                     <p>Thượng hạ Tây Đông</p>
                                     <p>Đôi bạn Tú Nam</p>
-                                    <p>Sắp về chung một tổ ổ ổ ổ <span
-                                            class="x3nfvp2 x1j61x8r x1fcty0u xdj266r xhhsvwb xat24cr xgzva0m xxymvpz x10w6t97 x1td3qas"><img
-                                            height="32" width="32" alt="📣" class="xz74otr"
+                                    <p>Sắp về chung một ổ ổ ổ ổ <span><img
+                                            height="32" width="32"
                                             referrerpolicy="origin-when-cross-origin"
-                                            src="https://static.xx.fbcdn.net/images/emoji.php/v9/t13/2/32/1f4e3.png"></span>
-                                        <span
-                                                class="x3nfvp2 x1j61x8r x1fcty0u xdj266r xhhsvwb xat24cr xgzva0m xxymvpz x10w6t97 x1td3qas"><img
-                                                height="32" width="32" alt="📣" class="xz74otr"
+                                            src="{% static 'images/party-horn.svg' %}"></span>
+                                        <span><img
+                                                height="32" width="32"
                                                 referrerpolicy="origin-when-cross-origin"
-                                                src="https://static.xx.fbcdn.net/images/emoji.php/v9/t13/2/32/1f4e3.png"></span>
-                                        <span
-                                                class="x3nfvp2 x1j61x8r x1fcty0u xdj266r xhhsvwb xat24cr xgzva0m xxymvpz x10w6t97 x1td3qas"><img
-                                                height="32" width="32" alt="📣" class="xz74otr"
+                                                src="{% static 'images/party-horn.svg' %}"></span>
+                                        <span><img
+                                                height="32" width="32"
                                                 referrerpolicy="origin-when-cross-origin"
-                                                src="https://static.xx.fbcdn.net/images/emoji.php/v9/t13/2/32/1f4e3.png"></span>
+                                                src="{% static 'images/party-horn.svg' %}"></span>
                                     </p>
                                 </div>
                                 <!-- <div class="wpo-wedding-date wow fadeInUp" data-wow-duration="1700ms">
@@ -431,60 +426,6 @@
             </div>
         </div> <!-- end container -->
     </section>
-    <section class="wpo-blog-section">
-        <div class="container">
-            <div class="row">
-                <section class="wpo-testimonial-section-s3">
-                    <div class="container">
-                        <div class="wpo-testimonial-wrap">
-                            <div class="row">
-                                <div class="col col-lg-12">
-                                    <div class="wpo-testimonial-items">
-                                        <div class="wpo-section-title">
-                                            <h2>Những lời chúc phúc</h2>
-                                        </div>
-                                        <div id="wishes-container" class="owl-carousel owl-theme">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-        <div class="b-shape">
-            <img src="{% static 'images/blog/shape-1.svg' %}" alt="">
-        </div>
-        <div class="wpo-section-title" style="padding-top: 5%;">
-            <button class="theme-btn" onclick="openForm()">Gửi lời chúc cho chúng mình nhé!</button>
-        </div>
-        <!-- The popup form -->
-        <div class="form-popup" id="myForm">
-            <h2>Gửi lời chúc</h2>
-            <form id="add-wish-form" method="post" action="{% url 'index' %}">
-                {% csrf_token %}
-                {{ form.non_field_errors }}
-                <div class="form-group">
-                    <label for="{{ form.author.id_for_label }}">Cho bọn mình biết bạn là ai nhé!</label>
-                    {{ form.author }}
-                    {% if form.author.errors %}
-                    <span class="text-danger">{{ form.author.errors }}</span>
-                    {% endif %}
-                </div>
-                <div class="form-group">
-                    <label for="{{ form.wish.id_for_label }}">Đừng quên lời chúc nhé!</label>
-                    {{ form.wish }}
-                    {% if form.wish.errors %}
-                    <span class="text-danger">{{ form.wish.errors }}</span>
-                    {% endif %}
-                </div>
-                <button class="btn btn-outline-primary" type="submit" onclick="closeForm()">Submit</button>
-                <button class="btn btn-outline-danger" onclick="closeForm()">Close</button>
-            </form>
-        </div>
-
-    </section>
     <!-- end wpo-portfolio-section -->
     <section class="wpo-event-section section-padding" id="event">
         <div class="container">
@@ -495,49 +436,107 @@
                 <div class="row">
                     <div class="col col-lg-6 col-md-6 col-12">
                         <div class="wpo-event-item wow fadeInUp" data-wow-duration="1200ms">
-                            <div class="wpo-event-img">
-                                <div class="wpo-event-img-inner">
-                                    <img src="{% static 'images/event/2.jpg' %}" alt="">
-                                </div>
-                            </div>
                             <div class="wpo-event-text">
                                 <div class="title">
-                                    <h2>The Ceremony</h2>
+                                    <h2>Tiệc cưới nhà gái</h2>
                                 </div>
                                 <ul>
-                                    <li>Monday, 12 Apr. 2022 <br>
-                                        1:00 PM – 2:30 PM
+                                    <li>Thứ năm, 11-04-2024 <br>
+                                        17:30 – 20:30
                                     </li>
-                                    <li>4517 Washington Ave. Manchester, Kentucky 39495</li>
-                                    <li>+1 234-567-8910</li>
+                                    <li>98 Thái Thịnh, Đống Đa, Hà Nội</li>
+                                    <li>0947181996</li>
                                     <li><a class="popup-gmaps"
-                                           href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25211.21212385712!2d144.95275648773628!3d-37.82748510398018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce7e0!2zTWVsYm91cm5lIFZJQyAzMDA0LCDgpoXgprjgp43gpp_gp43gprDgp4fgprLgpr_gpq_gprzgpr4!5e0!3m2!1sbn!2sbd!4v1503742051881">See
-                                        Location</a></li>
+                                           href=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.6246482916818!2d105.8190133129086!3d21.007678080555674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac824d9b4797%3A0xb3f80263fd535c9e!2zVHJ1bmcgdMOibSBUaeG7h2MgJiBT4buxIGtp4buHbiBW4bqhbiBIb2EgVGjDoWkgVGjhu4tuaA!5e0!3m2!1sen!2s!4v1711212704300!5m2!1sen!2s">
+                                        Địa điểm</a></li>
                                 </ul>
+                            </div>
+                            <div class="accordion accordion-flush" id="accordionFlushBridal">
+                                <div class="accordion-item" style="margin-top: 5%">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#accordionFlushBridal-collapseOne" aria-expanded="false"
+                                            aria-controls="accordionFlushBridal-collapseOne">
+                                        Lịch trình buổi tiệc
+                                    </button>
+                                    <div id="accordionFlushBridal-collapseOne" class="accordion-collapse collapse"
+                                         data-bs-parent="#accordionFlushBridal">
+                                        <div class="accordion-body">
+                                            <div class="wpo-event-text">
+                                                <ul>
+                                                    <li><img width="32" height="32"
+                                                             src="{% static 'images/camera.svg' %}" atl=""> <br>
+                                                        17h00 <br>
+                                                        Đón khách
+                                                    </li>
+                                                    <li><img width="32" height="32"
+                                                             src="{% static 'images/rings-wedding.svg' %}" atl=""> <br>
+                                                        17h30 <br>
+                                                        Hành lễ
+                                                    </li>
+                                                    <li><img width="32" height="32"
+                                                             src="{% static 'images/champagne-glasses.svg' %}" atl="">
+                                                        <br>
+                                                        18h00 <br>
+                                                        Khai tiệc
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col col-lg-6 col-md-6 col-12">
-                        <div class="wpo-event-item wow fadeInUp" data-wow-duration="1400ms">
-                            <div class="wpo-event-img">
-                                <div class="wpo-event-img-inner">
-                                    <img src="{% static 'images/event/3.jpg' %}" alt="">
-                                </div>
-                            </div>
+                        <div class="wpo-event-item wow fadeInUp" data-wow-duration="1200ms">
                             <div class="wpo-event-text">
                                 <div class="title">
-                                    <h2>The Party</h2>
+                                    <h2>Tiệc cưới nhà trai</h2>
                                 </div>
                                 <ul>
-                                    <li>Monday, 12 Apr. 2022 <br>
-                                        1:00 PM – 2:30 PM
+                                    <li>Chủ nhật, 14-04-2024 <br>
+                                        10:45 – 12:45
                                     </li>
-                                    <li>4517 Washington Ave. Manchester, Kentucky 39495</li>
-                                    <li>+1 234-567-8910</li>
+                                    <li>Số 1 Hòa Sơn, Chúc Sơn, Chương Mỹ, Hà Nội</li>
+                                    <li>0865273886</li>
                                     <li><a class="popup-gmaps"
-                                           href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25211.21212385712!2d144.95275648773628!3d-37.82748510398018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce7e0!2zTWVsYm91cm5lIFZJQyAzMDA0LCDgpoXgprjgp43gpp_gp43gprDgp4fgprLgpr_gpq_gprzgpr4!5e0!3m2!1sbn!2sbd!4v1503742051881">See
-                                        Location</a></li>
+                                           href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.7796772425104!2d105.69955491290749!3d20.921181980621096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31344df0e61db93f%3A0x62b18c7342ed07c0!2zMSBIw7JhIFPGoW4sIFRULiBDaMO6YyBTxqFuLCBDaMawxqFuZyBN4bu5LCBIw6AgTuG7mWkgMTM0MDYsIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1711220367536!5m2!1sen!2s">
+                                        Địa điểm</a></li>
                                 </ul>
+                            </div>
+                            <div class="accordion accordion-flush" id="accordionFlushGroom">
+                                <div class="accordion-item" style="margin-top: 5%">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#accordionFlushGroom-collapseOne" aria-expanded="false"
+                                            aria-controls="accordionFlushGroom-collapseOne">
+                                        Lịch trình buổi tiệc
+                                    </button>
+                                    <div id="accordionFlushGroom-collapseOne" class="accordion-collapse collapse"
+                                         data-bs-parent="#accordionFlushGroom">
+                                        <div class="accordion-body">
+                                            <div class="wpo-event-text">
+                                                <ul>
+                                                    <li><img width="32" height="32"
+                                                             src="{% static 'images/camera.svg' %}" atl=""> <br>
+                                                        10h15 <br>
+                                                        Đón khách
+                                                    </li>
+                                                    <li><img width="32" height="32"
+                                                             src="{% static 'images/rings-wedding.svg' %}" atl=""> <br>
+                                                        10h45 <br>
+                                                        Hành lễ
+                                                    </li>
+                                                    <li><img width="32" height="32"
+                                                             src="{% static 'images/champagne-glasses.svg' %}" atl="">
+                                                        <br>
+                                                        11h00 <br>
+                                                        Khai tiệc
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -647,7 +646,60 @@
         </div>
     </section>
     <!-- end of wpo-contact-section -->
-    <!-- start wpo-event-section -->
+    <!-- start wpo-blog-section -->
+    <section class="wpo-blog-section">
+        <div class="container">
+            <div class="row">
+                <section class="wpo-testimonial-section-s3">
+                    <div class="container">
+                        <div class="wpo-testimonial-wrap">
+                            <div class="row">
+                                <div class="col col-lg-12">
+                                    <div class="wpo-testimonial-items">
+                                        <div class="wpo-section-title">
+                                            <h2>Những lời chúc phúc</h2>
+                                        </div>
+                                        <div id="wishes-container" class="owl-carousel owl-theme">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="b-shape">
+            <img src="{% static 'images/blog/shape-1.svg' %}" alt="">
+        </div>
+        <div class="wpo-section-title" style="padding-top: 5%;">
+            <button class="theme-btn" onclick="openForm()">Gửi lời chúc cho chúng mình nhé!</button>
+        </div>
+        <!-- The popup form -->
+        <div class="form-popup" id="myForm">
+            <h2>Gửi lời chúc</h2>
+            <form id="add-wish-form" method="post" action="{% url 'index' %}">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <div class="form-group">
+                    <label for="{{ form.author.id_for_label }}">Cho bọn mình biết bạn là ai nhé!</label>
+                    {{ form.author }}
+                    {% if form.author.errors %}
+                    <span class="text-danger">{{ form.author.errors }}</span>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.wish.id_for_label }}">Đừng quên lời chúc nhé!</label>
+                    {{ form.wish }}
+                    {% if form.wish.errors %}
+                    <span class="text-danger">{{ form.wish.errors }}</span>
+                    {% endif %}
+                </div>
+                <button class="btn btn-outline-primary" type="submit" onclick="closeForm()">Submit</button>
+                <button class="btn btn-outline-danger" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+    </section>
 </div>
 <!-- end of page-wrapper -->
 <!-- All JavaScript files
@@ -698,43 +750,45 @@
             }
         }
     })
+
     // Function to display wishes (modified)
 
     function displayWishes(data) {
-        data.forEach(function(wish) {
+        data.forEach(function (wish) {
             const wishItem = $('<div class="item"></div>');  // Create an item element
             wishItem.append(`<div class="wpo-blog-content"><h2>${wish.wish}</h2><span>${wish.author}</span></div>`);
             owlCarousel.trigger('add.owl.carousel', [wishItem, 0]).trigger('refresh.owl.carousel');  // Append the item to the container
         });
         owlCarousel.trigger('to.owl.carousel', 0).trigger('refresh.owl.carousel');
     }
-    $(document).ready(function() {
+
+    $(document).ready(function () {
         const existingWishes = JSON.parse("{{ items|escapejs }}");  // Access wishes from context
         displayWishes(existingWishes);  // Display existing wishes on page load
     });
-    $(document).ready(function() {
+    $(document).ready(function () {
         // Initial display of existing wishes using AJAX
         $.ajax({
             url: '{% url 'index' %}',  // URL for fetching existing wishes
             dataType: 'json',
-            success: function(response) {
+            success: function (response) {
                 displayWishes(response);  // Display retrieved wishes
             }
         });
 
         // Handle form submission using AJAX (existing code)
-        $('#add-wish-form').submit(function(event) {
-           event.preventDefault();
+        $('#add-wish-form').submit(function (event) {
+            event.preventDefault();
 
-                $.ajax({
-                    url: $(this).attr('action'),
-                    method: 'POST',
-                    data: $(this).serialize(),
-                    success: function(response) {
-                        displayWishes([response]);  // Update displayed wishes
-                        $('#add-wish-form')[0].reset();  // Clear the form
-                    }
-                });
+            $.ajax({
+                url: $(this).attr('action'),
+                method: 'POST',
+                data: $(this).serialize(),
+                success: function (response) {
+                    displayWishes([response]);  // Update displayed wishes
+                    $('#add-wish-form')[0].reset();  // Clear the form
+                }
+            });
         });
     });
 </script>
