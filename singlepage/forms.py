@@ -11,10 +11,10 @@ class WishForm(forms.ModelForm):
 class RSVPForm(forms.ModelForm):
     class Meta:
         model = RSVP
-        fields = ['name', 'email', 'attendance', 'party']
+        fields = ['name', 'num_guests', 'attendance', 'party']
         labels = {
-            "name":  "Tên của bạn",
-            "email": "Email",
-            "attendance": "Xác nhận tham dự",
-            "party": "Tiêc cưới sẽ tham dự"
+            "name":  "Cho vợ chồng mình biết tên bạn nhé!",
+            "num_guests": "Bạn đi mấy mình?",
+            "attendance": "Chắc là tham dự rồi?",
+            "party": "Bạn tham gia tiệc cưới nào?"
         }

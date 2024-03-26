@@ -134,7 +134,7 @@
         <div class="static-hero-right">
             <div class="static-hero-img scene" id="scene">
                 <div class="static-hero-img-inner">
-                    <img src="{% static 'images/LD_05857_resized.JPG' %}" alt="">
+                    <img src="{% static 'images/couple/LD_05857_resized.JPG' %}" alt="">
                 </div>
                 <div class="static-hero-shape-1 wow fadeInDown" data-wow-delay=".5s">
                         <span class="layer" data-depth="0.25">
@@ -177,7 +177,7 @@
                             <div class="couple-img-wrap wow fadeInLeftSlow" data-wow-duration="1700ms">
                                 <div class="couple-img"
                                      style="mask-image: url({% static 'images/couple/mask-1.svg' %}); -webkit-mask-image: url({% static 'images/couple/mask-1.svg' %});">
-                                    <img src="{% static 'images/MP_08760_resized.jpg' %}"
+                                    <img src="{% static 'images/couple/MP_08760_resized.jpg' %}"
                                          alt="">
                                 </div>
                                 <div class="c-shape">
@@ -520,9 +520,9 @@
                         <div class="wpo-section-title">
                             <h2 id="rsvp-header">Bạn sẽ đến chung vui với chúng mình chứ?</h2>
                             <h2 id="thank-you-message" style="display: none; transition: visibility 1s ease-in-out;">
-                                Sự hiện diện của bạn là niềm vinh dự của chúng mình!</h2>
+                                Sự hiện diện của bạn là niềm hạnh phúc của vợ chồng mình!</h2>
                             <h2 id="sorry-message" style="display: none; transition: visibility 1s ease-in-out;">
-                                Cố gắng sắp xếp thời gian để đến chung vui với bọn mình nhé!
+                                Hẹn cà phê bữa sau nhé!
                             </h2>
                         </div>
                         <div class="wpo-contact-form-area">
@@ -539,7 +539,7 @@
                             </h2>
                             <h2 id="sorry-icon" class="text-lg-center"
                                 style="display: none;transition: visibility 1s ease-in-out">
-                                &#129394;&#129394;&#129394;
+                                &#129402;&#129402;&#129402;
                             </h2>
                         </div>
                     </div>
@@ -611,20 +611,13 @@
             <h2>Gửi lời chúc</h2>
             <form id="add-wish-form" method="post" action="{% url 'index' %}">
                 {% csrf_token %}
-                {{ form.non_field_errors }}
                 <div class="form-group">
                     <label for="{{ form.author.id_for_label }}">Cho bọn mình biết bạn là ai nhé!</label>
                     {{ form.author }}
-                    {% if form.author.errors %}
-                        <span class="text-danger">{{ form.author.errors }}</span>
-                    {% endif %}
                 </div>
                 <div class="form-group">
                     <label for="{{ form.wish.id_for_label }}">Đừng quên lời chúc nhé!</label>
                     {{ form.wish }}
-                    {% if form.wish.errors %}
-                        <span class="text-danger">{{ form.wish.errors }}</span>
-                    {% endif %}
                 </div>
                 <button class="btn btn-outline-primary" type="submit" onclick="closeForm()">Submit</button>
                 <button class="btn btn-outline-danger" onclick="closeForm()">Close</button>
