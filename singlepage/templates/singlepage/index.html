@@ -58,6 +58,11 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+
+        .asteriskField {
+            display: none;
+        }
+
     </style>
 </head>
 
@@ -114,25 +119,8 @@
                                     <p>Chiềng làng chiềng chạ</p>
                                     <p>Thượng hạ Tây Đông</p>
                                     <p>Đôi bạn Tú Nam</p>
-                                    <p>Sắp về chung một ổ ổ ổ ổ <span><img
-                                            height="32" width="32"
-                                            referrerpolicy="origin-when-cross-origin"
-                                            src="{% static 'images/party-horn.svg' %}"></span>
-                                        <span><img
-                                                height="32" width="32"
-                                                referrerpolicy="origin-when-cross-origin"
-                                                src="{% static 'images/party-horn.svg' %}"></span>
-                                        <span><img
-                                                height="32" width="32"
-                                                referrerpolicy="origin-when-cross-origin"
-                                                src="{% static 'images/party-horn.svg' %}"></span>
-                                    </p>
+                                    <p>Sắp về chung một ổ ổ ổ ổ &#127881;&#127881;&#127881;</p>
                                 </div>
-                                <!-- <div class="wpo-wedding-date wow fadeInUp" data-wow-duration="1700ms">
-                                    <div class="clock-grids">
-                                        <div id="clock"></div>
-                                    </div>
-                                </div> -->
                                 <div class="shape-2 wow fadeInUp" data-wow-duration="1800ms"><img
                                         src="{% static 'images/slider/shape2.svg' %}" alt="">
                                 </div>
@@ -461,26 +449,15 @@
                                     <div id="accordionFlushBridal-collapseOne" class="accordion-collapse collapse"
                                          data-bs-parent="#accordionFlushBridal">
                                         <div class="accordion-body">
-                                            <div class="wpo-event-text">
-                                                <ul>
-                                                    <li><img width="32" height="32"
-                                                             src="{% static 'images/camera.svg' %}" atl=""> <br>
-                                                        17h00 <br>
-                                                        Đón khách
-                                                    </li>
-                                                    <li><img width="32" height="32"
-                                                             src="{% static 'images/rings-wedding.svg' %}" atl=""> <br>
-                                                        17h30 <br>
-                                                        Hành lễ
-                                                    </li>
-                                                    <li><img width="32" height="32"
-                                                             src="{% static 'images/champagne-glasses.svg' %}" atl="">
-                                                        <br>
-                                                        18h00 <br>
-                                                        Khai tiệc
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                            <p style="font-size: 32px;margin: 0 0 0 0">&#128248;</p>
+                                            <p style="margin-top:0;padding-top: 0;margin-bottom: 5%;padding-bottom: 5%">
+                                                17h00<br>Đón khách</p>
+                                            <p style="font-size: 32px;margin: 0 0 0 0">&#128112;&#129333;</p>
+                                            <p style="margin-top:0;padding-top: 0;margin-bottom: 5%;padding-bottom: 5%">
+                                                17h30<br>Hành lễ</p>
+                                            <p style="font-size: 32px;margin: 0 0 0 0">&#129346;</p>
+                                            <p style="margin-top:0;padding-top: 0;margin-bottom: 5%;padding-bottom: 5%">
+                                                18h00<br>Khai tiệc</p>
                                         </div>
                                     </div>
                                 </div>
@@ -514,26 +491,15 @@
                                     <div id="accordionFlushGroom-collapseOne" class="accordion-collapse collapse"
                                          data-bs-parent="#accordionFlushGroom">
                                         <div class="accordion-body">
-                                            <div class="wpo-event-text">
-                                                <ul>
-                                                    <li><img width="32" height="32"
-                                                             src="{% static 'images/camera.svg' %}" atl=""> <br>
-                                                        10h15 <br>
-                                                        Đón khách
-                                                    </li>
-                                                    <li><img width="32" height="32"
-                                                             src="{% static 'images/rings-wedding.svg' %}" atl=""> <br>
-                                                        10h45 <br>
-                                                        Hành lễ
-                                                    </li>
-                                                    <li><img width="32" height="32"
-                                                             src="{% static 'images/champagne-glasses.svg' %}" atl="">
-                                                        <br>
-                                                        11h00 <br>
-                                                        Khai tiệc
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                            <p style="font-size: 32px;margin: 0 0 0 0">&#128248;</p>
+                                            <p style="margin-top:0;padding-top: 0;margin-bottom: 5%;padding-bottom: 5%">
+                                                10h15<br>Đón khách</p>
+                                            <p style="font-size: 32px;margin: 0 0 0 0">&#128112;&#129333;</p>
+                                            <p style="margin-top:0;padding-top: 0;margin-bottom: 5%;padding-bottom: 5%">
+                                                10h45<br>Hành lễ</p>
+                                            <p style="font-size: 32px;margin: 0 0 0 0">&#129346;</p>
+                                            <p style="margin-top:0;padding-top: 0;margin-bottom: 5%;padding-bottom: 5%">
+                                                11h00<br>Khai tiệc</p>
                                         </div>
                                     </div>
                                 </div>
@@ -547,69 +513,34 @@
     </section>
     <!-- start of wpo-contact-section -->
     <section class="wpo-contact-section-s2 section-padding">
-        <div class="container-fluid">
+        <div id="rsvp-form-container" class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col col-xl-4 col-lg-6 col-md-6 col-12">
+                <div class="col col-xl-6 col-lg-6 col-md-6 col-12">
                     <div class="wpo-contact-section-wrapper">
                         <div class="wpo-section-title">
-                            <h2>Are You Attending?</h2>
+                            <h2 id="rsvp-header">Bạn sẽ đến chung vui với chúng mình chứ?</h2>
+                            <h2 id="thank-you-message" style="display: none; transition: visibility 1s ease-in-out;">
+                                Sự hiện diện của bạn là niềm vinh dự của chúng mình!</h2>
+                            <h2 id="sorry-message" style="display: none; transition: visibility 1s ease-in-out;">
+                                Cố gắng sắp xếp thời gian để đến chung vui với bọn mình nhé!
+                            </h2>
                         </div>
                         <div class="wpo-contact-form-area">
-                            <form method="post" class="contact-validation-active" id="contact-form-main">
-                                <div>
-                                    <input type="text" class="form-control" name="name" id="name"
-                                           placeholder="Name">
-                                </div>
-                                <div>
-                                    <input type="email" class="form-control" name="email" id="email"
-                                           placeholder="Email">
-                                </div>
-                                <div class="radio-buttons">
-                                    <p>
-                                        <input type="radio" id="attend" name="radio-group" checked>
-                                        <label for="attend">Yes, I will be there</label>
-                                    </p>
-                                    <p>
-                                        <input type="radio" id="not" name="radio-group">
-                                        <label for="not">Sorry, I can’t come</label>
-                                    </p>
-                                </div>
-                                <div>
-                                    <select name="guest" class="form-control">
-                                        <option disabled="disabled" selected>Number Of Guests</option>
-                                        <option>01</option>
-                                        <option>02</option>
-                                        <option>03</option>
-                                        <option>04</option>
-                                        <option>05</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <input type="text" class="form-control" name="what" id="what"
-                                           placeholder="What Will You Be Attending">
-                                </div>
-                                <div>
-                                    <select name="meal" class="form-control last">
-                                        <option disabled="disabled" selected>Meal Preferences</option>
-                                        <option>Chicken Soup</option>
-                                        <option>Motton Kabab</option>
-                                        <option>Chicken BBQ</option>
-                                        <option>Mix Salad</option>
-                                        <option>Beef Ribs</option>
-                                    </select>
-                                </div>
-                                <div class="submit-area">
-                                    <button type="submit" class="theme-btn">RSVP</button>
-                                    <div id="c-loader">
-                                        <i class="ti-reload"></i>
-                                    </div>
-                                </div>
-                                <div class="clearfix error-handling-messages">
-                                    <div id="success">Thank you, Message Send</div>
-                                    <div id="error"> Error occurred while sending email. Please try again later.
-                                    </div>
-                                </div>
+                            {% load crispy_forms_tags %}
+                            <form id="rsvp-form" method="post" action="{% url 'index' %}">
+                                {% csrf_token %}
+                                {{ rsvp_form|crispy }}
+                                <input type="hidden" name="form_name" value="rsvp-form">
+                                <button class="btn btn-outline-primary" type="submit">Gửi</button>
                             </form>
+                            <h2 id="thank-you-icon" class="text-lg-center"
+                                style="display: none;transition: visibility 1s ease-in-out">
+                                Let's party!!!&#129395;&#129395;&#129395;
+                            </h2>
+                            <h2 id="sorry-icon" class="text-lg-center"
+                                style="display: none;transition: visibility 1s ease-in-out">
+                                &#129394;&#129394;&#129394;
+                            </h2>
                         </div>
                     </div>
                 </div>
@@ -685,14 +616,14 @@
                     <label for="{{ form.author.id_for_label }}">Cho bọn mình biết bạn là ai nhé!</label>
                     {{ form.author }}
                     {% if form.author.errors %}
-                    <span class="text-danger">{{ form.author.errors }}</span>
+                        <span class="text-danger">{{ form.author.errors }}</span>
                     {% endif %}
                 </div>
                 <div class="form-group">
                     <label for="{{ form.wish.id_for_label }}">Đừng quên lời chúc nhé!</label>
                     {{ form.wish }}
                     {% if form.wish.errors %}
-                    <span class="text-danger">{{ form.wish.errors }}</span>
+                        <span class="text-danger">{{ form.wish.errors }}</span>
                     {% endif %}
                 </div>
                 <button class="btn btn-outline-primary" type="submit" onclick="closeForm()">Submit</button>
@@ -789,6 +720,33 @@
                     $('#add-wish-form')[0].reset();  // Clear the form
                 }
             });
+        });
+    });
+    $(document).ready(function () {
+        $('#rsvp-form').submit(function (event) {
+            event.preventDefault();
+            $.ajax({
+                url: $(this).attr('action'),
+                method: 'POST',
+                data: $(this).serialize(),
+                success: function (response) {
+                    console.log(response);
+                    if (response.message === 1) {
+                        $('#rsvp-header').hide();
+                        $('#rsvp-form').hide();
+                        $('#thank-you-message').show();
+                        $('#thank-you-icon').show();
+                    } else if (response.message === 0) {
+                        $('#rsvp-header').hide();
+                        $('#rsvp-form').hide();
+                        $('#sorry-message').show();
+                        $('#sorry-icon').show();
+                    }
+                },
+                error: function (response) {
+                    console.log(response);
+                }
+            })
         });
     });
 </script>

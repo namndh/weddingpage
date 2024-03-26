@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    'crispy_forms',
+    'crispy_bootstrap4',
     'singlepage',
 ]
 
@@ -57,7 +59,6 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
-
 CORS_ALLOW_HEADERS = (
     "accept",
     "authorization",
@@ -66,6 +67,10 @@ CORS_ALLOW_HEADERS = (
     "x-csrftoken",
     "x-requested-with",
 )
+
+# django-crispy-forms
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 ROOT_URLCONF = 'weddingsite.urls'
 
