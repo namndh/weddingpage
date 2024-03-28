@@ -24,13 +24,25 @@
     <link href="{% static 'css/jquery-ui.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <style>
-        .open-button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
+        .grid-display {
+            display: grid;
+            grid-template-rows: auto; /* Define row sizes */
+            grid-gap: 10%;
+        }
+
+        .qr-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            border-radius: 10px;
+            width: 40%;
         }
 
         /* Style the popup form */
@@ -531,7 +543,9 @@
                                 {% csrf_token %}
                                 {{ rsvp_form|crispy }}
                                 <input type="hidden" name="form_name" value="rsvp-form">
-                                <button class="btn btn-outline-primary" type="submit">Gửi</button>
+                                <div class="text-center">
+                                    <button class="theme-btn" type="submit">Xác nhận</button>
+                                </div>
                             </form>
                             <h2 id="thank-you-icon" class="text-lg-center"
                                 style="display: none;transition: visibility 1s ease-in-out">
@@ -604,7 +618,15 @@
             <img src="{% static 'images/blog/shape-1.svg' %}" alt="">
         </div>
         <div class="wpo-section-title" style="padding-top: 5%;">
-            <button class="theme-btn" onclick="openForm()">Gửi lời chúc cho chúng mình nhé!</button>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-6">
+                    <button class="theme-btn" onclick="openForm()">Gửi lời chúc ở đây nè!</button>
+                </div>
+                <div class="col-lg-6 col-md-6 col-6">
+                    <button class="theme-btn" onclick="openQR()">Gửi quà cưới ở đây nè!</button>
+                </div>
+            </div>
+
         </div>
         <!-- The popup form -->
         <div class="form-popup" id="myForm">
@@ -619,9 +641,19 @@
                     <label for="{{ form.wish.id_for_label }}">Đừng quên lời chúc nhé!</label>
                     {{ form.wish }}
                 </div>
-                <button class="btn btn-outline-primary" type="submit" onclick="closeForm()">Submit</button>
-                <button class="btn btn-outline-danger" onclick="closeForm()">Close</button>
+                <div class="text-center">
+                    <button class="btn btn-outline-primary" type="submit" onclick="closeForm()">Gửi</button>
+                    <button class="btn btn-outline-danger" onclick="closeForm()">Đóng</button>
+                </div>
             </form>
+        </div>
+        <div class="qr-popup grid-display" id="qr">
+            <div class="text-center" style="grid-area: 1 / 1 / 2 / 2;">
+                <img src="{% static 'images/qr.jpg' %}" width="250px" height="250px" alt="">
+            </div>
+            <div class="text-center" style="grid-area: 2 / 1 / 3 / 2;">
+                <button class="btn btn-outline-danger" style="margin-top: 5%" onclick="closeQR()">Đóng</button>
+            </div>
         </div>
     </section>
 </div>
@@ -646,6 +678,15 @@
     function closeForm() {
         document.getElementById("myForm").style.display = "none";
     }
+
+    function openQR() {
+        document.getElementById("qr").style.display = "block";
+    }
+
+    function closeQR() {
+        document.getElementById("qr").style.display = "none";
+    }
+
 </script>
 
 <script>
